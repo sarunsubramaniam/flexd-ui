@@ -1,0 +1,130 @@
+// @keyframes wave {
+//   from {
+//     left: 50%;
+//     right: 50%;
+//     border-radius: 25px;
+//   }
+//   to {
+//     left: 0;
+//     right: 0;
+//     border-radius: 0px;
+//   }
+// }
+
+.button-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .button {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid $primaryColor;
+    background: transparent;
+    color: $primaryColor;
+    justify-content: center;
+    padding: 0.5em 1.5em 0.5em;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    min-height: 1em;
+    margin: 0.35em 0;
+    &:hover {
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0;
+        // animation: wave 0.5s ease-in-out;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.05);
+      }
+    }
+    &.solid {
+      background-color: $grey-grade--1;
+      border: 1px solid transparent;
+    }
+    &:not(:last-child) {
+      margin-right: 0.625rem;
+    }
+
+    &.primary {
+      color: $primaryColor;
+      border: 1px solid $primaryColor;
+      &.solid {
+        background-color: $primaryColor;
+        color: $white-grade--1;
+        border: 1px solid transparent;
+      }
+    }
+    &.secondary {
+      color: $secondaryColor;
+      border: 1px solid $secondaryColor;
+      &.solid {
+        background-color: $secondaryColor;
+        color: $white-grade--1;
+        border: 1px solid transparent;
+      }
+    }
+    &.white {
+      color: $white-grade--1;
+      border: 1px solid $white-grade--1;
+      &.solid {
+        background-color: $white-grade--1;
+        color: $primaryColor;
+        border: 1px solid transparent;
+      }
+    }
+    &.info {
+      color: $green-grade--1;
+      border: 1px solid $green-grade--1;
+      &.solid {
+        background-color: $green-grade--1;
+        color: $white-grade--1;
+        border: 1px solid transparent;
+      }
+    }
+    &.error {
+      color: $red-grade--1;
+      border: 1px solid $red-grade--1;
+      &.solid {
+        background-color: $red-grade--1;
+        color: $white-grade--1;
+        border: 1px solid transparent;
+      }
+    }
+    &.fluid {
+      flex-basis: 100%;
+      margin-right: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+$breakpoints: "sm" 576px, "md" 768px, "lg" 992px, "xl" 1200px;
+
+@each $device, $breakpoint in $breakpoints {
+  @media (min-width: $breakpoint) {
+    .button-wrapper {
+      .button {
+        &.fluid-#{$device} {
+          flex-basis: 100%;
+          margin-right: 0;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &.fluid {
+          flex-basis: initial;
+          margin-bottom: initial;
+          &:not(:last-child) {
+            margin-right: 0.625rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.card {
+  position: relative;
+  border-radius: 2px;
+  // border: 1px solid #efefef;
+  max-width: 100%;
+  background-color: #fafafa;
+  margin: 1rem auto 1rem auto;
+  // box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+  //   0 0 0 1px rgba(10, 10, 10, 0.02);
+  overflow: hidden;
+  // color: $text-color-grade--2;
+  .card-image {
+    img {
+      max-width: 100%;
+    }
+  }
+  .card-content {
+    padding: 1rem;
+    h4 {
+      color: $text-color-grade--1;
+    }
+  }
+}

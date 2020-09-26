@@ -1,0 +1,9 @@
+@mixin gridWidth($grid) {
+  flex: 0 0 $grid / 12 * 100%;
+  max-width: $grid / 12 * 100%;
+}
+
+@mixin offsetWidth($grid) {
+  margin-left: $grid / 12 * 100%;
+  @debug $grid / 12 * 100%;
+}

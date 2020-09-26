@@ -1,0 +1,20 @@
+.alert {
+  border: 1px solid $grey-grade--1;
+  padding: 1rem;
+  background: $grey-grade--2;
+  border-radius: 4px;
+  font-weight: 400;
+  margin: 10px auto;
+  $alerts: "primary" $blue-grade--1 $blue-grade--2,
+    "success" $green-grade--1 $green-grade--2,
+    "warning" $yellow-grade--1 $yellow-grade--2,
+    "error" $red-grade--1 $red-grade--2;
+
+  @each $alert, $colorOne, $colorTwo in $alerts {
+    &.#{$alert} {
+      background: #{$colorTwo};
+      border: 1px solid #{$colorOne};
+      color: #{$colorOne};
+    }
+  }
+}
