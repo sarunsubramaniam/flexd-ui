@@ -1,0 +1,38 @@
+.input-wrapper {
+  .input-fields {
+    display: flex;
+    flex-direction: column;
+    .input-field {
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+    }
+  }
+  .input-field {
+    flex: auto;
+    label {
+      font-weight: 600;
+    }
+    input,
+    textarea {
+      border: 1px solid $outline;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.875rem;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .input-wrapper {
+    .input-fields {
+      flex-direction: row;
+      .input-field {
+        &:not(:first-child) {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

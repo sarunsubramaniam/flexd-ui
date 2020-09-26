@@ -1,15 +1,31 @@
 .align-center {
-  align-items: center;
+  align-items: center !important;
+}
+
+.align-flex-end {
+  align-items: flex-end !important;
+}
+
+.align-flex-start {
+  align-items: flex-start !important;
 }
 
 .justify-center {
-  justify-content: center;
+  justify-content: center !important;
+}
+
+.justify-flex-end {
+  justify-content: flex-end !important;
+}
+
+.justify-flex-start {
+  justify-content: flex-start !important;
 }
 
 .flex {
-  display: flex;
+  display: flex !important;
 }
 
 .inline-flex {
-  display: inline-flex;
+  display: inline-flex !important;
 }

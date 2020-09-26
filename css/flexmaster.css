@@ -451,16 +451,28 @@ mark,
     opacity: 1; } }
 
 .align-center {
-  align-items: center; }
+  align-items: center !important; }
+
+.align-flex-end {
+  align-items: flex-end !important; }
+
+.align-flex-start {
+  align-items: flex-start !important; }
 
 .justify-center {
-  justify-content: center; }
+  justify-content: center !important; }
+
+.justify-flex-end {
+  justify-content: flex-end !important; }
+
+.justify-flex-start {
+  justify-content: flex-start !important; }
 
 .flex {
-  display: flex; }
+  display: flex !important; }
 
 .inline-flex {
-  display: inline-flex; }
+  display: inline-flex !important; }
 
 h1,
 .h1 {
@@ -1130,6 +1142,30 @@ h6,
     order: 11; }
   .order-xl-12 {
     order: 12; } }
+
+.input-wrapper .input-fields {
+  display: flex;
+  flex-direction: column; }
+  .input-wrapper .input-fields .input-field:not(:first-child) {
+    margin-left: 0; }
+
+.input-wrapper .input-field {
+  flex: auto; }
+  .input-wrapper .input-field label {
+    font-weight: 600; }
+  .input-wrapper .input-field input,
+  .input-wrapper .input-field textarea {
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.875rem; }
+
+@media (min-width: 576px) {
+  .input-wrapper .input-fields {
+    flex-direction: row; }
+    .input-wrapper .input-fields .input-field:not(:first-child) {
+      margin-left: 1rem; } }
 
 .card {
   position: relative;
