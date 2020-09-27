@@ -22,7 +22,6 @@ const $ = (function () {
       for (var i = -1, l = this.length; ++i < l; ) {
         fn.call(this[i], this[i], i, l, this);
       }
-
       return this;
     }
   }
@@ -32,13 +31,13 @@ const $ = (function () {
   }
 
   $.NodeList = NodeList;
-
   return $;
 })();
 
 /* Tabs */
 
-$.NodeList.prototype.tabs = function () {
+$.NodeList.prototype.tabs = function (options) {
+  this.options = options;
   return this.each(function (elem) {
     (function () {
       let currentTab = elem.getAttribute("id");
@@ -68,7 +67,8 @@ $.NodeList.prototype.tabs = function () {
 
 /* Accordion */
 
-$.NodeList.prototype.accordion = function () {
+$.NodeList.prototype.accordion = function (options) {
+  this.options = options;
   return this.each(function (elem) {
     (function () {
       let currentAccordion = elem.getAttribute("id");
