@@ -30,15 +30,26 @@
     min-height: 1em;
     margin: 0.35em 0;
     &:hover {
+      text-decoration: none;
       &:after {
         content: "";
         position: absolute;
         left: 0px;
         right: 0;
-        // animation: wave 0.5s ease-in-out;
         top: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.05);
+      }
+    }
+    i {
+      margin-left: 1rem;
+    }
+    &.link {
+      border: none;
+      color: $link !important;
+      padding: 0.5rem;
+      &.large {
+        font-size: 1.5rem;
       }
     }
     &.solid {

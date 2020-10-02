@@ -1171,8 +1171,9 @@ h6,
   position: relative;
   border-radius: 2px;
   max-width: 100%;
-  background-color: #fafafa;
+  background-color: white;
   margin: 1rem auto 1rem auto;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
   overflow: hidden; }
   .card .card-image img {
     max-width: 100%; }
@@ -1180,6 +1181,8 @@ h6,
     padding: 1rem; }
     .card .card-content h4 {
       color: #1d1d1f; }
+    .card .card-content p:last-child {
+      margin-bottom: 0; }
 
 .button-wrapper {
   align-items: center;
@@ -1199,14 +1202,24 @@ h6,
     border-radius: 4px;
     min-height: 1em;
     margin: 0.35em 0; }
-    .button-wrapper .button:hover:after {
-      content: "";
-      position: absolute;
-      left: 0px;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.05); }
+    .button-wrapper .button:hover {
+      text-decoration: none; }
+      .button-wrapper .button:hover:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.05); }
+    .button-wrapper .button i {
+      margin-left: 1rem; }
+    .button-wrapper .button.link {
+      border: none;
+      color: #2997ff !important;
+      padding: 0.5rem; }
+      .button-wrapper .button.link.large {
+        font-size: 1.5rem; }
     .button-wrapper .button.solid {
       background-color: #f4f4f5;
       border: 1px solid transparent; }
@@ -1383,22 +1396,17 @@ h6,
   padding-left: 0; }
   .accordion ul li {
     list-style: none;
-    border: 1px solid #e0e0e0; }
-    .accordion ul li:not(:first-child) {
-      border-top: none; }
-    .accordion ul li:first-child {
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px; }
-      .accordion ul li:first-child .accordion-body {
-        display: block; }
-    .accordion ul li:last-child {
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px; }
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 4px; }
+    .accordion ul li:not(:last-child) {
+      margin-bottom: 0.5rem; }
+    .accordion ul li:first-child .accordion-body {
+      display: block; }
     .accordion ul li .accordion-head {
       position: relative;
       cursor: pointer;
       font-weight: 400;
-      padding: 0.5rem 0.875rem; }
+      padding: 0.875rem; }
       .accordion ul li .accordion-head.active i {
         transform: translateY(-50%) rotate(180deg); }
       .accordion ul li .accordion-head:hover i {
