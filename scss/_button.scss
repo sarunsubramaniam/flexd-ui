@@ -31,6 +31,9 @@
     margin: 0.35em 0;
     &:hover {
       text-decoration: none;
+      i {
+        animation: linkArrow 0.25s forwards;
+      }
       &:after {
         content: "";
         position: absolute;

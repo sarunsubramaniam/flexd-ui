@@ -450,6 +450,12 @@ mark,
     transform: scale(1);
     opacity: 1; } }
 
+@keyframes linkArrow {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(5px); } }
+
 .align-center {
   align-items: center !important; }
 
@@ -1204,6 +1210,8 @@ h6,
     margin: 0.35em 0; }
     .button-wrapper .button:hover {
       text-decoration: none; }
+      .button-wrapper .button:hover i {
+        animation: linkArrow 0.25s forwards; }
       .button-wrapper .button:hover:after {
         content: "";
         position: absolute;
