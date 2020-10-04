@@ -120,143 +120,44 @@
   }
 }
 
-@media (min-width: 576px) {
-  .wrapper {
-    max-width: 540px;
-  }
-  .grid-sm {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-
-  @for $i from 1 through 12 {
-    .grid-sm-#{$i} {
-      @include gridWidth($i);
+$breakpoints: "sm" $breakpoint-sm $breakpoint-wrapper-sm,
+  "md" $breakpoint-md $breakpoint-wrapper-md,
+  "lg" $breakpoint-lg $breakpoint-wrapper-lg,
+  "xl" $breakpoint-xl $breakpoint-wrapper-xl;
+@each $device, $breakpoint, $width in $breakpoints {
+  @media (min-width: #{$breakpoint}) {
+    .wrapper {
+      max-width: #{$width};
     }
-  }
-
-  @for $i from 0 through 11 {
-    .offset-sm-#{$i} {
-      @include offsetWidth($i);
+    .grid-#{$device} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
     }
-  }
 
-  .order-sm-first {
-    order: -1;
-  }
-  .order-sm-last {
-    order: 13;
-  }
-  @for $i from 0 through 12 {
-    .order-sm-#{$i} {
-      order: $i;
+    @for $i from 1 through 12 {
+      .grid-#{$device}-#{$i} {
+        @include gridWidth($i);
+      }
     }
-  }
-}
 
-@media (min-width: 768px) {
-  .wrapper {
-    max-width: 720px;
-  }
-  .grid-md {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-
-  @for $i from 1 through 12 {
-    .grid-md-#{$i} {
-      @include gridWidth($i);
+    @for $i from 0 through 11 {
+      .offset-#{$device}-#{$i} {
+        @include offsetWidth($i);
+      }
     }
-  }
 
-  @for $i from 0 through 11 {
-    .offset-md-#{$i} {
-      @include offsetWidth($i);
+    .order-#{$device}-first {
+      order: -1;
     }
-  }
-
-  .order-md-first {
-    order: -1;
-  }
-  .order-md-last {
-    order: 13;
-  }
-  @for $i from 0 through 12 {
-    .order-md-#{$i} {
-      order: $i;
+    .order-#{$device}-last {
+      order: 13;
     }
-  }
-}
 
-@media (min-width: 992px) {
-  .wrapper {
-    max-width: 960px;
-  }
-  .grid-lg {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-
-  @for $i from 1 through 12 {
-    .grid-lg-#{$i} {
-      @include gridWidth($i);
-    }
-  }
-
-  @for $i from 0 through 11 {
-    .offset-lg-#{$i} {
-      @include offsetWidth($i);
-    }
-  }
-
-  .order-lg-first {
-    order: -1;
-  }
-  .order-lg-last {
-    order: 13;
-  }
-  @for $i from 0 through 12 {
-    .order-lg-#{$i} {
-      order: $i;
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .wrapper {
-    max-width: 1140px;
-  }
-  .grid-xl {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  }
-
-  @for $i from 1 through 12 {
-    .grid-xl-#{$i} {
-      @include gridWidth($i);
-    }
-  }
-
-  @for $i from 0 through 11 {
-    .offset-xl-#{$i} {
-      @include offsetWidth($i);
-    }
-  }
-
-  .order-xl-first {
-    order: -1;
-  }
-  .order-xl-last {
-    order: 13;
-  }
-
-  @for $i from 0 through 12 {
-    .order-xl-#{$i} {
-      order: $i;
+    @for $i from 0 through 12 {
+      .order-#{$device}-#{$i} {
+        order: $i;
+      }
     }
   }
 }
