@@ -1,0 +1,11 @@
+@for $i from 0 through 20 {
+  .pt-#{$i} {
+    @include paddingTop($i);
+  }
+}
+
+@for $i from 0 through 20 {
+  .pb-#{$i} {
+    @include paddingBottom($i);
+  }
+}

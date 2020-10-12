@@ -47,7 +47,10 @@ $.NodeList.prototype.tabs = function (options) {
         currentItem.classList.add(`${currentTab}-${idx}`);
       });
       [...tabs].forEach((tab, idx) => {
-        let firstTab = idx === 0 ? tab.classList.add("active") : null;
+        // idx === 0 ? tab.classList.add("active") : "";
+        if (idx === 0) {
+          tab.classList.add("active");
+        }
         tab.setAttribute("data-tab", idx);
         tab.addEventListener("click", function (e) {
           [...tabs].forEach((tab) => {
@@ -78,8 +81,10 @@ $.NodeList.prototype.accordion = function (options) {
         panelBody.classList.add(`${currentAccordion}-${idx}`);
       });
       [...panelHeadList].forEach((panelHead, idx) => {
-        let firstAccordion =
-          idx === 0 ? panelHead.classList.add("active") : null;
+        // idx === 0 ? panelHead.classList.add("active") : "";
+        if (idx === 0) {
+          panelHead.classList.add("active");
+        }
         panelHead.setAttribute("data-accordion", idx);
         panelHead.addEventListener("click", function (e) {
           [...panelHeadList].forEach((panelHead) =>
